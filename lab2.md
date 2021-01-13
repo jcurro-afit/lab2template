@@ -50,3 +50,10 @@ Now retrain the 3blue1brown network using the mixed up data and compare the perf
 
 ## Git
 Remember to submit your code to the git repo and post a link on Canvas.
+
+## Easier to Grade
+To grade this lab I will clone your repo and then in the project root run the command
+```bash
+docker-compose up --build lab2deploy
+```
+That should be enough to run the entire lab and show me all the output I have asked for. 
