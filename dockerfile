@@ -2,7 +2,7 @@ FROM tensorflow/tensorflow:2.3.0-gpu as develop
 # this stage is the one we do development in
 
 # Install system libraries for python packages
-RUN apt-get update &&  DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         graphviz \
         python3-tk \
     # now in the same command clean up the pacakges to shrink layer size
