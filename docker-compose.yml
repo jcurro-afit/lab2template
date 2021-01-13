@@ -4,7 +4,7 @@ services:
   lab2: &default-service
     build:
       context: .
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
       target: develop
     environment:
       DISPLAY:
@@ -26,7 +26,7 @@ services:
     <<: *default-service
     build:
       context: .
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
       target: deploy
     working_dir: /opt/project
     command: /bin/bash -c "python3 src/lab2.py ; python3 src/hellomnist.py"
