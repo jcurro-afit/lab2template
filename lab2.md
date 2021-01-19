@@ -54,6 +54,6 @@ Remember to submit your code to the git repo and post a link on Canvas.
 ## Easier to Grade
 To grade this lab I will clone your repo and then in the project root run the command
 ```bash
-docker-compose up --build lab2deploy
+docker-compose up --build
 ```
 That should be enough to run the entire lab and show me all the output I have asked for. 

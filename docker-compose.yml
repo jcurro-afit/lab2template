@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   # this service is for development
-  lab2: &default-service
+  lab2:
     build:
       context: .
       dockerfile: Dockerfile
@@ -20,13 +20,7 @@ services:
       - "/opt/data:/opt/data"
       # pass through the .keras folder
       - "/opt/data/.keras:/tmp/.keras"
-
-  # this service is for deploying and copies most of the default service
-  lab2deploy:
-    <<: *default-service
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: deploy
+      # mount in project directory
+      - ".:/opt/project"
     working_dir: /opt/project
     command: /bin/bash -c "python3 src/lab2.py ; python3 src/hellomnist.py"
