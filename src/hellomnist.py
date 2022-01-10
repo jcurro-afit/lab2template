@@ -50,10 +50,11 @@ def mixupdata(input_data, shuffle_data_indices=None):
     shuffle_data = shuffle_data[:, shuffle_data_indices]
     shuffle_data = np.reshape(shuffle_data, input_data.shape)
     return shuffle_data, shuffle_data_indices
+
+
 # mix up the images
 train_images_mixup, mixup = mixupdata(train_images)
 test_images_mixup, _ = mixupdata(test_images, mixup)
-
 
 # show mixed up images
 
