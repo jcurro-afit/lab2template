@@ -25,9 +25,11 @@ test_labels = to_categorical(test_labels)
 
 # Build 3blue1brown model
 
+# Print 3blue1brown model accuracy
 
 # Build better model
 
+# Print better model accuracy
 
 # Build 3blue1brown model again but shuffle data
 def mixupdata(input_data, shuffle_data_indices=None):
@@ -55,5 +57,12 @@ test_images_mixup, _ = mixupdata(test_images, mixup)
 
 # show mixed up images
 
+# Predict performance of 3blue1brown model with mixed up images
+# I predict ...
 
-# rebuild that 3blue1brown model again from scratch
+# rebuild that 3blue1brown model again from scratch and then retrain with mixed up images
+# print 3blue1brown model with mixed up images accuracy
+
+# Compare performance of original 3blue1brown model to the new one trained on the mixed up images
+# Comparing the two models ...
+
