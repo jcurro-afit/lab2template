@@ -3,9 +3,10 @@
 This lab goes over Python basics and then some keras basics
 
 ## Setup
-- Make a new repository using the template from github classroom. You will use this repo to hold the code for the rest of the project. You must have at least 2 commits for this project ie. do not just upload the whole thing in one commit.
+- Make a new repository using the template from github classroom. You will use this repo to hold the code for the rest of the project.
 - Remember to add any large files like `.idea`, `.pyc`, '.hf5' etc. to the `.gitignore` so the large files do not end up on the repo. You should never upload large data files to the git repo. 
 - Remember to change any placeholder code like the `yourname` in the `docker-compose.yml` file to your actual name
+- The `docker-compose.yml` file volume mounts some directories that may not exist yet on your computer. If docker makes them it will give them root ownership preventing you from writing to it and causing problems. To prevent this make the folders yourself for example by running `mkdir -p /opt/data/.keras`. If you forget to do this and docker makes the files owned by the root you need to take ownership of the directory with `sudo chmod -R 777 /opt/data/.keras` or change the permissions of the directory with `sudo chown -R $USER:$USER /opt/data/.keras`. Remember the location of the directory on the host computer will be different from the directory when it is mounted in the container.   
 - Make a new PyCharm project and configure the `dockerfile` and `docker-compose.yml` to run your code using the `lab2` service.
 
 ## Numpy and Matplotlib basics
