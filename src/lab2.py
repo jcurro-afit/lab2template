@@ -8,6 +8,12 @@ print("Running lab2.py")
 
 # calculate variables, replace None with the real math
 
+X = None
+print('X:\n', X)
+
+y = None
+print('y:\n', y)
+
 z = None
 print('z:\n', z)
 

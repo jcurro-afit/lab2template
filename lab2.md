@@ -10,22 +10,38 @@ This lab goes over Python basics and then some keras basics
 - Make a new PyCharm project and configure the `dockerfile` and `docker-compose.yml` to run your code using the `lab2` service.
 
 ## Numpy and Matplotlib basics
-This section will go over basic array manipulation in numpy. Complete each task in order as they build on each other. You are not allowed to use python loops.
+This section will go over basic array manipulation in numpy. Complete each task in order as they build on each other. You are not allowed to use python loops or list comprehension.
+NOTE: when modifying the variable `x` modify it in place like the following code example (unrelated to the lab code):
+```python
+import numpy as np
+x = np.arange(10)
+x += 2
+x *= 3
+```
+or equivalently you could just keep assigning back to x
+```python 
+import numpy as np
+x = np.arange(10)
+x = x + 2
+x = x * 3
+```
+
 ### Plotting
 1. Make an array named `t` which ranges from 0 to 10 in increments of 0.01. (0 should be the first value and the last should be 9.99)
 2. Make an array named `x` which is a function of `t` such that  `x=sinc(t)`. Remember that `sinc(0) = 1`. For more infor on the `sinc` function see [here](https://en.wikipedia.org/wiki/Sinc_function)
 3. Plot `x` vs `t` and label all axes. 
-4. Using slicing to clip the `x` values to a max of 0.1 and plot again in a new figure
-5. Multiply the last 100 `x` values by 10 and the second to last 100 values times 2 and plot again on a new figure.
+4. Using slicing to clip the `x` values to a max of 0.1 and plot again in a new figure. Remember to assign this back to the variable `x`.
+5. Multiply the last 100 `x` values by 10 and the second to last 100 values times 2 and plot again on a new figure. Remember again to assign this back to the variable x.
 ### Tensor Manipulation
-1. Slice out values from indices 500 to 509 (not including 509, this array should have 9 values) of `x` and reshape to be 3 by 3 and call that new variable `X`
-2. Slice out the first 3 values of `x` and store that to a variable called `y`
+Use the modified final value of the array `x` for this section.
+1. Slice out values from indices 500 to 509 (not including 509, this array should have 9 values) of `x` and reshape to be 3 by 3 and call that new variable `X`, print this variable `X`
+2. Slice out the first 3 values of original array `x` and store that to a variable called `y` and print this new variable `y` 
 3. Do a matrix multiplication of `X` and `y` and print the result `z`
 4. Next do an elementwise multiplication of `X` and `y` and print the result `Z`
-5. Concat horizontally `[X|Z]`(should be a `3 x 6` array) and matrix multiply by `y` concatenated to itself `[y|y]` (should be a `6 x 1` array) and print the result `S`.
+5. Concat horizontally `[X|Z]`(should be a `3 x 6` array) and matrix multiply by `y` concatenated to itself `[y|y]` (should be a 1D array of size 6 or a `6 x 1` 2D array) and print the result `S`.
 
 ### Outputs
-The output for this section should be three individual plots, and the outputs `z`, `Z` and `S`.
+The output for this section should be three individual plots, and the outputs `X`, `y`, `z`, `Z`, and `S`.
 
 # Keras Basics
 
@@ -48,10 +64,10 @@ Make your own separate network the beats the 3blue1brown network above. Now you 
 
 ### Dense Data
 In order to show that the ANNs in the 3blue1brown (and most likely the one you made) do not think of the data as humans do we will train one last network. 
-This network will be exactly the same as the 3blue1brown network, but we will change the training data. We are going to reorder the pixels in every image the **exact same way**. For template function see `hellomnist.py`. Using the template function you can mix up the pixels in your training and test set in the **exact same order** for each image in each dataset. 
-Make a plot showing the very first image in the normal dataset and the mixed up dataset. Predict the performance you think the ANN will achieve with this new dataset given what you see. Write this in a comment in the python script.
+This network will be exactly the same architecture as the 3blue1brown network, but we will change the training data. We are going to reorder the pixels in every image the **exact same way**. For template function see `hellomnist.py`. Using the template function you can mix up the pixels in your training and test set in the **exact same order** for each image in each dataset. 
+Make a plot showing the very first image in the normal dataset and the mixed up dataset. Predict the performance you think the 3blue1brown ANN (trained on the mixed up data) will achieve when trained and evaluated on this dataset (the mixed up data). Write this in a comment in the python script.
 
-Now retrain the 3blue1brown network using the mixed up data and print the accuracy. Next, compare the performance to the first one you trained (with the normal data) in a comment in the python script.
+Now retrain the 3blue1brown network using the mixed up data and print the accuracy. Next, compare the performance of this new 3blue1brown ANN (trained on the mixed up data) to the first 3blue1brown ANN (trained with the normal data) in a comment in the python script.
 
 ## Git
 Remember to submit your code to the git repo and post a link on Canvas.
