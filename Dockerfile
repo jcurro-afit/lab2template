@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:2.7.0-gpu as develop
+FROM tensorflow/tensorflow:2.8.0-gpu as develop
 # this stage is the one we do development in
 
 # Install system libraries for python packages
